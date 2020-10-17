@@ -291,7 +291,7 @@ namespace SpotifyPlaylistGenerator
             if (sources == null)
                 return;
             await File.WriteAllTextAsync(FilePath + $"{userId}-{name}.json", JsonConvert.SerializeObject(sources), cancellation);
-            Print(printDepth, $"Profile {name} created");
+            Print(printDepth, $"Profile {name} created\n");
         }
 
         private string GenerateSelectProfileMenu(string userId, int printDepth)
@@ -346,7 +346,7 @@ namespace SpotifyPlaylistGenerator
                         break;
                     case "s":
                         await File.WriteAllTextAsync(FilePath + $"{userId}-{profileName}.json", JsonConvert.SerializeObject(profile), cancellation);
-                        Print(printDepth, $"Profile {profileName} saved");
+                        Print(printDepth, $"Profile {profileName} saved\n");
                         return;
                     default:
                         return;

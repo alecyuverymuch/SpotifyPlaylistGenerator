@@ -42,13 +42,13 @@ namespace Spotify.Api.Core.Clients
         {
             var data = new List<KeyValuePair<string, object>>
             {
-                new KeyValuePair<string, object>("country", ClientConfig.County)
+                new KeyValuePair<string, object>("country", ClientConfig.Country)
             };
             if (limit != null)
                 data.Add(new KeyValuePair<string, object>("limit", limit));
             if (offset != null)
                 data.Add(new KeyValuePair<string, object>("offset", offset));
-            _logger.LazyLog(LogLevel.Information, () => $"Requesting featured playlist data from country {ClientConfig.County}");
+            _logger.LazyLog(LogLevel.Information, () => $"Requesting featured playlist data from country {ClientConfig.Country}");
             return await ExecuteWithRetryPolicyAsync(() => 
                 CreateRequest(data, cancellation, "browse", "featured-playlists")
                     .WhenAsync(r => r.GetAsync<SpotifyPagedPlaylistsResponse<SpotifySimplePlaylistResponse>>(cancellation)));
@@ -58,13 +58,13 @@ namespace Spotify.Api.Core.Clients
         {
             var data = new List<KeyValuePair<string, object>>
             {
-                new KeyValuePair<string, object>("country", ClientConfig.County)
+                new KeyValuePair<string, object>("country", ClientConfig.Country)
             };
             if (limit != null)
                 data.Add(new KeyValuePair<string, object>("limit", limit));
             if (offset != null)
                 data.Add(new KeyValuePair<string, object>("offset", offset));
-            _logger.LazyLog(LogLevel.Information, () => $"Requesting top playlist data from country {ClientConfig.County}");
+            _logger.LazyLog(LogLevel.Information, () => $"Requesting top playlist data from country {ClientConfig.Country}");
             return await ExecuteWithRetryPolicyAsync(() =>
                 CreateRequest(data, cancellation, "browse", "categories", "toplists", "playlists")
                     .WhenAsync(r => r.GetAsync<SpotifyPagedPlaylistsResponse<SpotifySimplePlaylistResponse>>(cancellation)));
@@ -100,7 +100,7 @@ namespace Spotify.Api.Core.Clients
         {
             var data = new List<KeyValuePair<string, object>>
             {
-                new KeyValuePair<string, object>("country", ClientConfig.County)
+                new KeyValuePair<string, object>("country", ClientConfig.Country)
             };
             _logger.LazyLog(LogLevel.Information, () => "Requesting current users top artists");
             return await ExecuteWithRetryPolicyAsync(() =>
