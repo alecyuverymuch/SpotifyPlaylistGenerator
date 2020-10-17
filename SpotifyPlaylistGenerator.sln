@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyPlaylistMaker", "SpotifyPlaylistMaker\SpotifyPlaylistMaker.csproj", "{DC0D0899-BDEB-4EE0-B1A5-F203ECB854F6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyPlaylistGenerator", "SpotifyPlaylistGenerator\SpotifyPlaylistGenerator.csproj", "{DC0D0899-BDEB-4EE0-B1A5-F203ECB854F6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spotify.Api.Core", "Spotify.Api.Core\Spotify.Api.Core.csproj", "{B26B615F-38D9-4ADC-B02B-532691DDBE4C}"
 EndProject

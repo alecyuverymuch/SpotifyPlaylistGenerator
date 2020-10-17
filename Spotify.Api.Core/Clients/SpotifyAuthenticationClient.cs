@@ -60,8 +60,8 @@ namespace Spotify.Api.Core.Clients
             {
                 { "client_id", _configuration.ClientId },
                 { "redirect_uri", _configuration.RedirectUri },
-                { "scope", "user-read-private user-read-email user-top-read playlist-modify-public playlist-modify-private" },
                 { "state", State },
+                { "scope", "user-read-private user-read-email user-top-read playlist-modify-public playlist-modify-private" },
                 { "response_type", "code" },
                 { "show_dialog", "false" }
             };
