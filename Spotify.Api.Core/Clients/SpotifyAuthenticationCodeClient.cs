@@ -15,22 +15,22 @@ using static Spotify.Api.Core.Extensions.FlurlExtensions;
 
 namespace Spotify.Api.Core.Clients
 {
-    public class SpotifyAuthenticationClient : IAuthenticationClient
+    public class SpotifyAuthenticationCodeClient : IAuthenticationClient
     {
         private static SpotifyAuthenticationConfiguration _configuration;
         private static IMemoryCache _cache;
-        private static ILogger<SpotifyAuthenticationClient> _logger;
+        private static ILogger<SpotifyAuthenticationCodeClient> _logger;
         private static readonly IFlurlClientFactory ClientFactory = new PerBaseUrlFlurlClientFactory();
         private static readonly string State = Guid.NewGuid().ToString();
 
         private const string AccessTokenCacheKey = "AccessTokenKey";
         private const string RefreshTokenCacheKey = "RefreshTokenKey";
 
-        public SpotifyAuthenticationClient(SpotifyAuthenticationConfiguration configuration, IMemoryCache cache, ILoggerFactory logger)
+        public SpotifyAuthenticationCodeClient(SpotifyAuthenticationConfiguration configuration, IMemoryCache cache, ILoggerFactory logger)
         {
             _configuration = configuration;
             _cache = cache;
-            _logger = logger.CreateLogger<SpotifyAuthenticationClient>();
+            _logger = logger.CreateLogger<SpotifyAuthenticationCodeClient>();
         }
 
         public async Task<string> AuthenticateAsync(CancellationToken cancellation = default)

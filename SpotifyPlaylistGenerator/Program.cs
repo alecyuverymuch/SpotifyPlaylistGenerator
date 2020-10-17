@@ -33,7 +33,8 @@ namespace SpotifyPlaylistGenerator
 
             var cache = new MemoryCache(new MemoryCacheOptions());
             var logger = new LoggerFactory();
-            var authClient = new SpotifyAuthenticationClient(spotifyAuthConfig, cache, logger);
+            var authClient = new SpotifyAuthenticationCodeClient(spotifyAuthConfig, cache, logger);
+            //var authClient = new SpotifyCredentialClient(spotifyAuthConfig, cache, logger);
             var client = new SpotifyApiClient(spotifyClientConfig, authClient, logger);
             var service = new SpotifyPlaylistService(client, logger);
             var generator = new ConsoleMenuGenerator(service, cache);
